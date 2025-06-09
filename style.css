@@ -1,0 +1,127 @@
+/* style.css */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --card-bg: #fff;
+  --accent: #317EFB;
+}
+
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --card-bg: #1e1e1e;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--accent);
+  color: white;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.title-box h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.title-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.hero-text {
+  margin-top: 1rem;
+}
+
+.hero-text button {
+  padding: 10px 20px;
+  background-color: var(--accent);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.features, .products {
+  padding: 2rem;
+}
+
+.feature-grid, .product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 1rem;
+}
+
+.feature-card, .product-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.product-card button {
+  padding: 8px 16px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+
+.toggle-dark-mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}

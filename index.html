@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopEase - Smart PWA Store</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="icon-192.png">
+</head>
+<body>
+  <header class="app-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="ShopEase Logo" class="logo">
+    <div class="title-box">
+      <h1>ShopEase</h1>
+      <p>Smart Shopping. Anytime. Anywhere.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img src="https://blog.shift4shop.com/hubfs/iStock-1051616786.jpg" alt="E-Commerce Experience" class="hero-img">
+      <div class="hero-text">
+        <h2>Next-Gen E-Commerce</h2>
+        <p>Offline access, push notifications, blazing fast experience – all in one app.</p>
+        <button onclick="notifyUser()">🔔 Get Updates</button>
+      </div>
+    </section>
+
+    <section class="features">
+      <h3>🚀 Core Features</h3>
+      <div class="feature-grid">
+        <div class="feature-card">⚡ Works Offline</div>
+        <div class="feature-card">📱 Fully Responsive</div>
+        <div class="feature-card">🔔 Push Notifications</div>
+        <div class="feature-card">💾 Smart Cache</div>
+        <div class="feature-card">🎨 Modern UI</div>
+        <div class="feature-card">🛒 Product Showcase</div>
+      </div>
+    </section>
+
+    <section class="products">
+      <h3>🛍️ Popular Picks</h3>
+      <div class="product-grid">
+        <div class="product-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Earbuds">
+          <h4>Wireless Earbuds</h4>
+          <p>₹1,999</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/869/869636.png" alt="Watch">
+          <h4>Smart Watch</h4>
+          <p>₹2,499</p>
+          <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png" alt="Shoes">
+          <h4>Running Shoes</h4>
+          <p>₹3,299</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="instructions">
+      <h3>📋 Project Requirements</h3>
+      <div class="instruction-card">
+        <h4>🔧 Instructions:</h4>
+        <ul>
+          <li>✅ Build a PWA for an E-commerce platform that works offline and supports push notifications.</li>
+          <li>✅ Focus areas: Service Workers, Cache API, and Responsive Design.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ShopEase | Crafted with 💙 using PWA</p>
+  </footer>
+
+  <script src="service_worker.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service_worker.js')
+        .then(() => console.log('✅ Service Worker Registered'))
+        .catch(err => console.error('❌ Service Worker Error:', err));
+    }
+
+    function notifyUser() {
+      if ('Notification' in window) {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('🎉 You\'re subscribed to ShopEase alerts!');
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>
